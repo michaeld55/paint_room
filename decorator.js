@@ -22,6 +22,15 @@ Decorator.prototype.totalPaint = function(){
   
 }
 
+Decorator.prototype.enoughPaint =function(room){
+    if (this.totalPaint() === room.area) {
+        console.log("test");
+        return true;
+    }else{
+        return false;
+    }
+}
+
 module.exports = Decorator;
 
 
