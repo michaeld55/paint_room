@@ -6,6 +6,14 @@
 
 const Room = function(area){
     this.area = area;
+    this.paintedSqMetres = 0;
 }
 
+Room.prototype.roomPainted = function(){
+    if (this.area === this.paintedSqMetres){
+        return true;
+    } else {
+        return false;
+    }
+}
 module.exports = Room;
