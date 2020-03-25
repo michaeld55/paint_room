@@ -36,7 +36,7 @@ Decorator.prototype.paintRoom = function(room, paint){
             this.addPaint(paint); 
     }
 
-    room.paintedSqMetres =  room.paintedSqMetres + this.totalPaint();
+    room.paintedSqMetres = room.paintedSqMetres + this.totalPaint();
     paint.emptyIt();
     return room.paintedSqMetres
 }
