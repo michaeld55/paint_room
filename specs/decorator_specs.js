@@ -30,7 +30,7 @@ describe("Decorator", function(){
         decorator.addPaint(paint);
         decorator.addPaint(paint);
         decorator.totalPaint();
-        const actual = decorator.totalPaint(); //here?
+        const actual = decorator.totalPaint();
         assert.deepStrictEqual(actual, 20);
     });
 
@@ -46,15 +46,9 @@ describe("Decorator", function(){
     })
 
     it("should paint room", function(){
-        /*
-        check enough paint
-        add paint if not enough
-        empty paint when used,
-        check if room painted
-        repeat till done.
-        */
-       const actual = decorator.paintRoom(room);
-       
+    
+       const actual = decorator.paintRoom(room, paint);
+       assert.strictEqual(actual, 50)
     });
 
     // - be able to paint room if has enough paint in stock

@@ -22,20 +22,24 @@ Decorator.prototype.totalPaint = function(){
   
 }
 
-Decorator.prototype.enoughPaint =function(room){
+Decorator.prototype.enoughPaint = function(room){
     if (this.totalPaint() === room.area) {
-        console.log("test");
         return true;
     }else{
         return false;
     }
 }
 
+Decorator.prototype.paintRoom = function(room, paint){
+    while (this.enoughPaint(room) === false) {
+        
+            this.addPaint(paint); 
+    }
+
+    room.paintedSqMetres =  room.paintedSqMetres + this.totalPaint();
+    paint.emptyIt();
+    return room.paintedSqMetres
+}
+
 module.exports = Decorator;
 
-
-
-// Room.prototype.roomPainted = function(paint){
-//     if (this.area == paint.litres){
-//         console.log(`You have paint enough!`)  
-// }
